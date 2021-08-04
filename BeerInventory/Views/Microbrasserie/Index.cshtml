@@ -1,0 +1,37 @@
+﻿@model IEnumerable<EFObjects.Tables.Microbrasserie>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Microbarsserie </title>
+</head>
+<body>
+    <div>
+        <h4>Microbrasserie</h4>
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Région</th>
+            </tr>
+            @foreach (var microbrasserie in Model)
+            {
+                <tr>
+                    <td>@microbrasserie.Nom</td>
+                    <td>@microbrasserie.Region.Nom</td>
+                    <td>@Html.ActionLink("Edit", "Edit", new { id = microbrasserie.Id })</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <p>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.id_microbrasserie }) |*@
+        @*@Html.ActionLink("Back to List", "Index")*@
+    </p>
+</body>
+</html>
